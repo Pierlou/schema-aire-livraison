@@ -13,8 +13,8 @@
    ],
    "countryCode":"FR",
    "homepage":"https://github.com/CEREMA/schema-aire-livraison",
-   "path":"https://github.com/CEREMA/schema-aire-livraison/raw/xxx/schema.json",
-   "image":"https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/xxx/files/image.png",
+   "path":"https://github.com/CEREMA/schema-aire-livraison/raw/0.1/schema.json",
+   "image":"https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/0.1/files/image.jpg",
    "licenses":[
       {
          "title":"Etalab Licence Ouverte 2.0",
@@ -24,20 +24,42 @@
    ],
    "resources":[
       {
-         "title":"Fichier valide",
-         "name":"exemple-valide-csv",
-         "path":"https://raw.githubusercontent.com/CEREMA/xxx.csv"
+         "title":"Exemple valide pour Antibes",
+         "name":"exemple-antibes-csv",
+         "path":"https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/0.1/exemple-antibes.csv"
       }
    ],
    "sources":[
       {
-         "title":"xxx",
-         "path":"xxx"
+         "title":"Arrêté CA/MFV/2016/328 d'Antibes de 2016",
+         "name":"arrete-CA/MFV/2016/328",
+         "path":"https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/0.1/files/513_17_creation_emplacement_reserve_bd_wilson.pdf"
+      },
+      {
+         "title":"Arrêté CA/SM/2017/261 d'Antibes de 2017",
+         "name":"arrete-CA/SM/2017/261",
+         "path":"https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/0.1/files/513_17_creation_emplacement_reserve_bd_wilson.pdf"
+      },
+      {
+         "title":"Aménager les aires de livraison",
+         "path":"https://www.cerema.fr/fr/actualites/amenager-aires-livraison"
+      },
+      {
+         "title":"AIRES DE LIVRAISON : QUELLES BONNES PRATIQUES POUR AMÉLIORER LES CONDITIONS DE LIVRAISON ?",
+         "path":"https://www.interlud.green/actualites/aires-de-livraison-quelles-bonnes-pratiques-pour-ameliorer-les-conditions-de-livraison"
+      },
+      {
+         "title":"Pratiques de livraison (par BAC IDF)",
+         "path":"https://bac-idf.fr/category/pratiques-de-livraison/"
+      },
+      {
+         "title":"Guide d'harmonisation des règlementations des livraisons co-rédigé par la Région Sud et la DREAL PACA",
+         "path":"https://github.com/CEREMA/schema-arrete-permanent-circulation/blob/v0.9.2/ressources/Guide%20Harmonisation%20des%20arr%C3%AAt%C3%A9s%20R%C3%A9gion%20PACA%202019.pdf"
       }
    ],
-   "created":"2022-11-22",
-   "lastModified":"2022-11-22",
-   "version":"0.1.0",
+   "created":"2024-01-04",
+   "lastModified":"2024-01-04",
+   "version":"0.1",
    "contributors":[
       {
          "title":"Mathieu Rajerison",
