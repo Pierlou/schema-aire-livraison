@@ -4,9 +4,9 @@ Aires de livraison
 
 Spécification du fichier d'échange relatif aux aires de livraison
 
-- Schéma créé le : 11/22/22
+- Schéma créé le : 01/04/24
 - Site web : https://github.com/CEREMA/schema-aire-livraison
-- Version : 0.1.0
+- Version : 0.1
 - Valeurs manquantes : `""`, `"NA"`, `"NaN"`, `"N/A"`
 - Clé primaire : `ID`
 

@@ -1,11 +1,17 @@
 # Schéma sur les aires de livraison
 Ceci est le répertoire du schéma sur les aires de livraison.
 
-Ce travail a été conduit en partenariat avec OpenDataFrance et La Région SUD et sera poursuivi en 2023 avec la DGITM.
+Ce travail a été conduit en partenariat avec OpenDataFrance et La Région SUD et sera poursuivi en 2024 avec la DGITM dans le cadre de la startup d'état [Dialog](https://beta.gouv.fr/startups/dialogue.html).
 
-Une première écriture du schéma est proposée sachant qu'en 2023, les parties prenantes et acteurs de la logistique seront conviés à son élaboration de manière plus approfondie.
+Une première écriture du schéma est proposée sachant qu'en 2024, les parties prenantes et acteurs de la logistique seront conviés à son élaboration de manière plus approfondie.
 
 ## Schéma
+
+Le schéma sur les aires de livraison vise à proposer [une structure](https://github.com/CEREMA/schema-aire-livraison/blob/master/documentation/schema-page.md) selon laquelle saisir les **informations** contenues dans ces arrêtés dans un tableau de données. 
+
+Le schéma proposé se veut volontairement [assez simple (un seul tableau de saisie)](https://github.com/CEREMA/schema-aire-livraison/blob/main/exemple-antibes.csv) afin de **faciliter** la production de données d'arrêtés par le plus grand nombre et donc de faciliter leur diffusion.
+
+Le schéma comporte les **champs** essentiels pour identifier les paramètres d'un arrêté ainsi que les caractéristiques de l'aire de livraison elle même. Sa structure est cohérente et reprend les champs du [schéma des arrêtés permanents de circulation en ville pour le transport de marchandises](https://schema.data.gouv.fr/CEREMA/schema-arrete-circulation-marchandises/).
 
 [Voir le schéma au format JSON TableSchema ](schema.json)  
 [Voir la documentation associée au schéma (liste des champs et valeurs possibles)](documentation/schema-page.md)   
@@ -15,8 +21,6 @@ Une première écriture du schéma est proposée sachant qu'en 2023, les parties
 Des champs supplémentaires sont disponibles pour le schéma dans sa version **ultra**
 
 [Voir le schéma version **ultra** au format TableSchema (json)](documentation/schema-page-ultra.md) 
-
-
 
 ## Pages de travail
 
