@@ -1,0 +1,28 @@
+---
+title: "3-fusion des schémas standard et ultra"
+output: html_notebook
+---
+
+```{r}
+library(jsonlite)
+
+s1 <- read_json("../../schema.json")
+s2 <- read_json("../../ultra.json")
+```
+
+```{r}
+fields <- s2$fields
+```
+
+```{r}
+s1$fields <- c(s1$fields, fields)
+```
+
+```{r}
+js <- toJSON(s1)
+write(js, "../../schema-ultra.json")
+```
+
+
+
+

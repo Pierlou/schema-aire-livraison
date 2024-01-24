@@ -1,0 +1,435 @@
+{
+   "$schema":"https://specs.frictionlessdata.io/schemas/table-schema.json",
+   "name":"aire-livraison",
+   "title":"Aires de livraison",
+   "description":"Spécification du fichier d'échange relatif aux aires de livraison",
+   "keywords":[
+      "supply",
+      "mobility",
+      "city",
+      "smartcity",
+      "regulation",
+      "parking"
+   ],
+   "countryCode":"FR",
+   "homepage":"https://github.com/CEREMA/schema-aire-livraison",
+   "path":"https://github.com/CEREMA/schema-aire-livraison/raw/xxx/schema.json",
+   "image":"https://raw.githubusercontent.com/CEREMA/schema-aire-livraison/xxx/files/image.png",
+   "licenses":[
+      {
+         "title":"Etalab Licence Ouverte 2.0",
+         "name":"etalab-2.0",
+         "path":"https://spdx.org/licenses/etalab-2.0.html"
+      }
+   ],
+   "resources":[
+      {
+         "title":"Fichier valide",
+         "name":"exemple-valide-csv",
+         "path":"https://raw.githubusercontent.com/CEREMA/xxx.csv"
+      }
+   ],
+   "sources":[
+      {
+         "title":"xxx",
+         "path":"xxx"
+      }
+   ],
+   "created":"2022-11-22",
+   "lastModified":"2022-11-22",
+   "version":"0.1.0",
+   "contributors":[
+      {
+         "title":"Mathieu Rajerison",
+         "email":"mathieu.rajerison@cerema.fr",
+         "organisation":"Cerema",
+         "role":"author"
+      },
+      {
+         "title":"Cédric Bariou",
+         "email":"cedric.bariou@cerema.fr",
+         "organisation":"Cerema",
+         "role":"contributor"
+      },
+      {
+         "title":"Jean-Marie Bourgogne",
+         "email":"jmbourgogne@opendatafrance.email",
+         "organisation":"OpenDataFrance",
+         "role":"contributor"
+      },
+      {
+         "title":"Silvio Rousic",
+         "email":"silvio.rousic@cerema.fr",
+         "organisation":"Cerema",
+         "role":"contributor"
+      }
+   ],
+   "fields":[
+
+      {
+         "name":"VEH_TYPES",
+         "title":"Types de véhicules",
+         "description":"Types de véhicules. S'il y a plusieurs types, les séparer les valeurs par le caractère '|'. Les valeurs possibles sont : 'Poids lourds', 'Véhicules utilitaires légers', 'Vélo-cargos' et 'Tous véhicules'.",
+         "type":"string",
+         "example":"Poids lourds|Tous véhicules|Vélo-cargos",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"VEH_USAGES",
+         "title":"Types d'usage",
+         "description":"Types d'usage de véhicule. S'il y a plusieurs usages, séparer les valeurs par le caractère '|'",
+         "example":"Bennes à ordures ménagères|Véhicules de police",
+         "type":"string",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"EMPRISE_COTE",
+         "title":"Coté de l'emprise",
+         "description":"Localisation par rapport au numéro de voirie",
+         "type":"string",
+         "example":"Droit",
+         "constraints":{
+            "required":false,
+            "enum":[  
+               "Droit",
+                "Vis-à-vis"
+            ]
+         }
+      },
+      {
+         "name":"EMPRISE_DEBUT",
+         "title":"Début de la section (libellé)",
+         "description":"Indication textuelle de l'endroit à partir duquel la règlementation s'applique, telle qu'écrite dans l'arrêté. Pour indiquer les coordonnées GPS, se référer au champ `GEOM_DEBUT`.",
+         "type":"string",
+         "example":"22 avenue Philippe Solari, Croisement de l'avenue Philippe Solari avec la rue Gaston de Saporta",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"GEOM_DEBUT",
+         "title":"Début de la section (coordonnées)",
+         "description":"Coordonnées GPS du début de la section. Se réfère à `EMPRISE_DEBUT`. S'écrit sous la forme 'long,lat' (5 ou 6 décimales sont conseillées).",
+         "type":"geopoint",
+         "example":"5.42101,43.53591",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"EMPRISE_PARITE",
+         "title":"Côté pair ou impair",
+         "description":"Côté pair ou impair",
+         "type":"string",
+         "example":"Impair",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Impair",
+               "Pair"
+            ]
+         }
+      },
+      {
+         "name":"EMPRISE_FIN",
+         "title":"Fin de la section (libellé)",
+         "description":"Indication textuelle de l'endroit au bout duquel la règlementation s'applique, telle qu'écrite dans l'arrêté. Pour indiquer les coordonnées GPS, se référer au champ `GEOM_FIN`.",
+         "type":"string",
+         "example":"34 bis avenue Philippe Solari, Intersection de l'avenue Philippe Solari avec le boulevard des Charmettes",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"GEOM_FIN",
+         "title":"Fin de la section (coordonnées)",
+         "description":"Coordonnées GPS de la fin de la section. Se réfère à `EMPRISE_DEBUT`. S'écrit sous la forme 'long,lat' (5 ou 6 décimales sont conseillées).",
+         "type":"geopoint",
+         "example":"5.42101,43.53591",
+         "constraints":{
+            "required":false
+         }
+      },
+      {
+         "name":"SIGNALISATION_HORIZONTALE",
+         "title":"Signalisation horizontale",
+         "description":"Signalisation horizontale",
+         "type":"string",
+         "example":"Avec panonceau",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Abimée",
+               "Absente",
+               "Avec panonceau",
+               "Sans panonceau"
+            ]
+         }
+      },
+      {
+         "name":"SIGNALISATION_VERTICALE",
+         "title":"Signalisation verticale",
+         "description":"Signalisation verticale",
+         "type":"string",
+         "example":"Avec panonceau",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Abimée",
+               "Absente",
+               "Avec panonceau",
+               "Sans panonceau"
+            ]
+         }
+      },
+      {
+         "name":"SIGNALISATION_CONFORMITE",
+         "title":"Conformité de la signalisation",
+         "description":"Conformité de la signalisation",
+         "type":"string",
+         "example":"Conforme",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Conforme",
+               "Non conforme",
+               "Signalisation horizontale non conforme",
+               "Signalisation verticale non conforme"
+            ]
+         }
+      },
+      {
+         "name":"STATIONNEMENT_TYPE",
+         "title":"Type de stationnement",
+         "description":"Type de stationnement",
+         "type":"string",
+         "example":"Bataille",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Bataille",
+               "Épi",
+               "Longitudinal"
+            ]
+         }
+      },
+      {
+         "name":"STATIONNEMENT_LOCALISATION",
+         "title":"Localisation du stationnement",
+         "description":"Localisation du stationnement. Champ issu de https://opendata.paris.fr/explore/dataset/stationnement-voie-publique-emplacements/table/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.zoneres&disjunctive.locsta&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&disjunctive.zoneasp&disjunctive.stv&disjunctive.prefet&q=livraison&refine.regpri=LIVRAISON&sort=locsta&basemap=jawg.dark&location=16,48.85483,2.33805",
+         "type":"string",
+         "example":"Chaussée",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Autre",
+               "Contre allée",
+               "Contre terre plein",
+               "Demi lincoln",
+               "Faux lincoln",
+               "Lincoln",
+               "Place",
+               "Terre plein",
+               "Trottoir"
+            ]
+         }
+      },
+      {
+         "name":"ASP_ID",
+         "title":"Identifiant de la zone de contrôle ASP",
+         "description":"xxx",
+         "example":"133-3",
+         "type":"string",
+         "constraints":{
+            "required":false,
+            "unique":false
+         }
+      },
+      {
+         "name":"RESERVATION",
+         "title":"URL de réservation",
+         "description":"URL de réservation",
+         "example":"https//reservermaplace.fr/aire=56ER56",
+         "type":"string",
+         "format":"uri",
+         "constraints":{
+            "required":false,
+            "unique":false
+         }
+      },
+      {
+         "name":"REGLEMENT",
+         "title":"Réglementation",
+         "description":"Réglementation",
+         "example":"Charte de livraison",
+         "type":"string",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"TARIF_MODE",
+         "title":"Mode de tarification",
+         "description":"Mode de tarification",
+         "type":"string",
+         "example":"Gratuit",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Gratuit",
+               "Stationnement limité",
+               "Stationnement payant"
+            ]
+         }
+      },
+      {
+         "name":"TARIF_PRIX",
+         "title":"Tarif horaire",
+         "description":"Tarif horaire",
+         "type":"number",
+         "example":"xxx",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"EMPRISE_SURFACE",
+         "title":"Surface",
+         "description":"xxx",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"EMPRISE_HAUTEUR_SOL",
+         "title":"Largeur",
+         "description":"si hauteur de la marche",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"EMPRISE_HAUTEUR_PLAFOND",
+         "title":"xxx",
+         "description":"hauteur max. si contrainte d'accès (parking ouvrage, parking en surface avec portique, ..)",
+         "type":"number",
+         "example":"9",
+         "constraints":{
+            "required":false,
+            "minimum":0,
+            "maximum":45
+         }
+      },
+      {
+         "name":"EQUIPEMENTS_MOBILIER",
+         "title":"Mobilier",
+         "description":"Type de mobilier présent (valeurs multiples possibles)",
+         "type":"string",
+         "example":"Rampe d'accès",
+         "constraints":{
+            "required":false,
+            "enum":[
+               "Rampe d'accès",
+               "xxx"
+            ]
+         }
+      },
+      {
+         "name":"EQUIPEMENTS_CAPTEUR",
+         "title":"Présence d'un capteur",
+         "description":"Capteur de présence ou d'identification de véhicule. Exemple de la ville de Cannes",
+         "example":"oui",
+         "trueValues":[
+            "oui",
+            "Oui",
+            "OUI",
+            "o",
+            "O",
+            "vrai",
+            "Vrai",
+            "VRAI",
+            "true",
+            "True",
+            "TRUE",
+            "1"
+         ],
+         "falseValues":[
+            "non",
+            "Non",
+            "NON",
+            "n",
+            "N",
+            "faux",
+            "Faux",
+            "FAUX",
+            "false",
+            "False",
+            "FALSE",
+            "0"
+         ],
+         "type":"boolean",
+         "constraints":{
+            "required":true
+         }
+      },
+      {
+         "name":"EQUIPEMENTS_IRVE",
+         "title":"Installation de recharge de véhicule électrique",
+         "description":"Présence d'une borne de recharge de véhicule électrique",
+         "example":"oui",
+         "trueValues":[
+            "oui",
+            "Oui",
+            "OUI",
+            "o",
+            "O",
+            "vrai",
+            "Vrai",
+            "VRAI",
+            "true",
+            "True",
+            "TRUE",
+            "1"
+         ],
+         "falseValues":[
+            "non",
+            "Non",
+            "NON",
+            "n",
+            "N",
+            "faux",
+            "Faux",
+            "FAUX",
+            "false",
+            "False",
+            "FALSE",
+            "0"
+         ],
+         "type":"boolean",
+         "constraints":{
+            "required":true
+         }
+      }
+   ],
+   "missingValues":[
+      "",
+      "NA",
+      "NaN",
+      "N/A"
+   ],
+   "primaryKey":"ID"
+}
