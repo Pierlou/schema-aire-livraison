@@ -1,0 +1,52 @@
+---
+title: "3-fusion des schémas standard et ultra"
+output: html_notebook
+---
+
+```{r}
+library(jsonlite)
+library(tidyverse)
+
+s1 <- read_json("../../schema.json")
+s2 <- read_json("../../ultra.json")
+```
+
+```{r}
+length(s1$fields)
+paste(sapply(s1$fields, function(elt) elt$name), collapse=", ")
+```
+
+```{r}
+paste(sapply(s2$fields, function(elt) elt$name), collapse=", ")
+```
+
+
+```{r}
+length(s1$fields)
+```
+
+
+```{r}
+fields <- s2$fields
+```
+
+```{r}
+s3 <- s1
+s3$fields <- c(s1$fields, fields)
+```
+
+```{r}
+js <- toJSON(s3, auto_unbox = T)
+write(js, "../../schema-ultra.json")
+```
+
+Champs avec acteur économique
+```{r}
+sapply(s3$fields, function(x) grepl("\\[Acteur économique\\]", x$title)) %>% which -> w
+
+sapply(s3$fields, function(x) x$name)[w] %>% paste(collapse = ", ")
+```
+
+
+
+

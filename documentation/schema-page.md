@@ -28,14 +28,16 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [REGL_ARTICLE](#article-du-règlement---propriété-regl_article) | chaîne de caractères  | Non |
 | [REGL_SOUS_ARTICLE](#sous-article-du-règlement---propriété-regl_sous_article) | chaîne de caractères  | Non |
 | [VEH_TONNAGE](#tonnage---propriété-veh_tonnage) | nombre réel  | Non |
+| [VEH_TYPES](#[acteur-économique]-types-de-véhicules---propriété-veh_types) | chaîne de caractères  | Oui |
 | [INTERV_JH](#jours-et-heures-de-livraison---propriété-interv_jh) | chaîne de caractères  | Non |
 | [INTERV_REGIME](#régime-d'accès---propriété-interv_regime) | chaîne de caractères  | Non |
 | [INTERV_DUREE](#durée-maximale-d'intervention---propriété-interv_duree) | heure  | Non |
 | [EMPRISE_ZONE](#zone---propriété-emprise_zone) | chaîne de caractères  | Non |
 | [EMPRISE_DESIGNATION](#adresse-du-point-de-référence-de-l'aire---propriété-emprise_designation) | chaîne de caractères  | Oui |
-| [EMPRISE_NBPLACES](#nombre-de-places---propriété-emprise_nbplaces) | nombre réel  | Oui |
 | [EMPRISE_LONGUEUR](#longueur-de-l'emprise---propriété-emprise_longueur) | nombre réel  | Non |
 | [EMPRISE_LARGEUR](#largeur-de-l'emprise---propriété-emprise_largeur) | nombre réel  | Non |
+| [EQUIPEMENT_IRVE_PRESENCE](#installation-de-recharge-de-véhicule-électrique---propriété-equipement_irve_presence) | booléen  | Oui |
+| [EQUIPEMENT_IRVE_PUISSANCE](#puissance-de-l'installation-de-recharge-de-véhicule-électrique---propriété-equipement_irve_puissance) | nombre réel  | Non |
 | [GEOM_XY](#coordonnées-gps-de-l'aire-de-livraison-ou-de-la-rue---propriété-geom_xy) | point géographique  | Oui |
 | [GEOM_WKT](#géométrie-au-format-wkt---propriété-geom_wkt) | chaîne de caractères  | Non |
 
@@ -108,21 +110,25 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Type : nombre réel
 - Valeur entre 0 et 45
 
+#### [Acteur économique] Types de véhicules - Propriété `VEH_TYPES`
+
+> *Description : Types de véhicules. S'il y a plusieurs types, les séparer les valeurs par le caractère '|'. Les valeurs possibles sont : 'Poids lourds', 'Véhicules utilitaires légers', 'Vélo-cargos' et 'Tous véhicules'.<br/>Ex : Poids lourds|Cycles|Voitures particulières|Tous véhicules*
+- Valeur obligatoire
+- Type : chaîne de caractères
+
 #### Jours et heures de livraison - Propriété `INTERV_JH`
 
-> *Description : Jours et heures de livraison exprimés selon le format OpeningHours d'OpenStreetMap ([https://wiki.openstreetmap.org/wiki/Key:opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)). Ce format permet d'indiquer les week-ends (we), les jours fériés (PH) et les vacances scolaires (SH). Par exemple `Mo-Fr 09:00-17:00; PH 10:00-12:00; PH Su off` signifie : 'Du lundi au vendredi de 9h à 17h sauf les jours fériés où l'ouverture est de 10h à 12h, à l'exception des jours fériés tombant un dimanche'. `24/7` indique `Tous les jours`. [Utiliser groom-groom pour récupérer les jours et heures de circulation](https://cerema-med.shinyapps.io/groom-groom?action=opening_hours)<br/>Ex : Mo-Fr 08:00-12:00,13:00-17:30; Sa 08:00-12:00; PH off*
+> *Description : Jours et heures de livraison exprimés selon le format OpeningHours d'OpenStreetMap ([https://wiki.openstreetmap.org/wiki/Key:opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)). Ce format permet d'indiquer les week-ends (we), les jours fériés (PH) et les vacances scolaires (SH). Par exemple `Mo-Fr 09:00-17:00; PH 10:00-12:00; PH Su off` signifie : 'Du lundi au vendredi de 9h à 17h sauf les jours fériés où l'ouverture est de 10h à 12h, à l'exception des jours fériés tombant un dimanche'. `24/7` indique `Tous les jours`. [Utiliser groom-groom pour récupérer les jours et heures de circulation](https://cerema-med.shinyapps.io/groom-groom?action=opening_hours). Si INTERV_JH est vide, alors ce ne sont que des livraisons qui sont autorisées. S'il y a des horaires spécifiés dans INTERV_JH, alors la livraison s'effectue à ces horaires. En dehors de ces plages, le stationnement standard est autorisé. Il est donc mixte.<br/>Ex : Mo-Fr 08:00-12:00,13:00-17:30; Sa 08:00-12:00; PH off*
 - Valeur optionnelle
 - Type : chaîne de caractères
 
 #### Régime d'accès - Propriété `INTERV_REGIME`
 
-> *Description : Permet de savoir si l'aire de livraison est exclusive ou partagée avec du stationnement particulier, ou éventuellement concerne le transport de fond (si on choisit d'intégrer les aires réservés au transport de fond)<br/>Ex : Exclusif*
+> *Description : Permet de savoir si l'aire de livraison est exclusive ou partagée avec du stationnement particulier, ou éventuellement concerne le transport de fond (si on choisit d'intégrer les aires réservés au transport de fond). Mixte : cohabite avec stationnement particulier<br/>Ex : Livraison*
 - Valeur optionnelle
 - Type : chaîne de caractères
 - Valeurs autorisées : 
-    - Mixte (avec stationnement particulier)
-    - Exclusif
-    - Alterné
+    - Mixte
     - Transport de fonds
     - Livraison
 
@@ -143,18 +149,11 @@ Spécification du fichier d'échange relatif aux aires de livraison
 > *Description : Adresse du point de référence de l'aire. Cela peut être toute une rue ou un tronçon. Endroit précis de l'aire de livraison réservée aux livraisons.<br/>Ex : Avenue Philippe Solari, Commune d'Aix-en-Provence, Quartier Mazarin, 200046977-ZFE-001*
 - Valeur obligatoire
 - Type : chaîne de caractères
-- Motif : `^[a-zA-Z0-9\-\–\'\’\«\»\°\"\s\d\u00C0-\u00FF\(\)\,\.]+$`
-
-#### Nombre de places - Propriété `EMPRISE_NBPLACES`
-
-> *Description : Nombre de zones/places disponibles pour l'arrêt. Une aire de livraison qui pourrait comporter plusieurs zones/places d'arrêt, avec le cas d'une seule adresse pour plusieurs aires de livraison.<br/>Ex : 9*
-- Valeur obligatoire
-- Type : nombre réel
-- Valeur entre 0 et 100
+- Motif : `^[a-zA-Z0-9\-\–\'\’\«\»\°\"\s\dÀ-ÿ\(\)\,\.]+$`
 
 #### Longueur de l'emprise - Propriété `EMPRISE_LONGUEUR`
 
-> *Description : Longueur de l'emprise en mètres. Cela peut être soit la longueur de la place, soit celle de l'emprise composée de l'ensemble des places. Dans certains cas, cette longueur peut être de plusieurs dizaines de mètres.<br/>Ex : 9*
+> *Description : Longueur de l'emprise en mètres.<br/>Ex : 9*
 - Valeur optionnelle
 - Type : nombre réel
 - Valeur entre 0 et 100
@@ -165,6 +164,19 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur optionnelle
 - Type : nombre réel
 - Valeur entre 0 et 10
+
+#### Installation de recharge de véhicule électrique - Propriété `EQUIPEMENT_IRVE_PRESENCE`
+
+> *Description : Présence d'une borne de recharge de véhicule électrique<br/>Ex : oui*
+- Valeur obligatoire
+- Type : booléen
+
+#### Puissance de l'installation de recharge de véhicule électrique - Propriété `EQUIPEMENT_IRVE_PUISSANCE`
+
+> *Description : Puissance de l'installation de recharge de véhicule électrique en kVA<br/>Ex : 22*
+- Valeur optionnelle
+- Type : nombre réel
+- Valeur entre 1 et 150
 
 #### Coordonnées GPS de l'Aire de Livraison ou de la rue - Propriété `GEOM_XY`
 

@@ -1,4 +1,0 @@
-"0","df1 <- read.csv(""../../exemple-valide.csv"", encoding = ""UTF-8"")"
-"0","df2 <- correctFile(df1, fields)"
-"2",">> SAUF_VEH_USAGES n'existe pas. On ne remplit à NA
-"
