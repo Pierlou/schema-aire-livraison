@@ -18,7 +18,11 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | Propriété | Type | Obligatoire |
 | -- | -- | -- |
 | [ID](#identifiant-de-l'entité---propriété-id) | chaîne de caractères  | Oui |
+<<<<<<< HEAD
 | [COLL_NOM](#[acteur-économique]-nom-de-la-collectivité-à-l'origine-de-l'arrêté---propriété-coll_nom) | chaîne de caractères  | Oui |
+=======
+| [COLL_NOM](#nom-de-la-collectivité-à-l'origine-de-l'arrêté---propriété-coll_nom) | chaîne de caractères  | Oui |
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 | [COLL_INSEE](#code-insee---propriété-coll_insee) | chaîne de caractères  | Oui |
 | [ARR_REF](#référence-de-l'arrêté---propriété-arr_ref) | chaîne de caractères  | Oui |
 | [ARR_DATE](#date-de-l'arrêté---propriété-arr_date) | date (format `%Y-%m-%d`) | Oui |
@@ -27,6 +31,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [ARR_URL](#adresse-internet-de-l'arrêté---propriété-arr_url) | chaîne de caractères (format `uri`) | Non |
 | [REGL_ARTICLE](#article-du-règlement---propriété-regl_article) | chaîne de caractères  | Non |
 | [REGL_SOUS_ARTICLE](#sous-article-du-règlement---propriété-regl_sous_article) | chaîne de caractères  | Non |
+<<<<<<< HEAD
 | [VEH_TONNAGE](#[acteur-économique]-tonnage---propriété-veh_tonnage) | nombre réel  | Non |
 | [INTERV_JH](#[acteur-économique]-jours-et-heures-de-livraison---propriété-interv_jh) | chaîne de caractères  | Non |
 | [INTERV_REGIME](#[acteur-économique]-régime-d'accès---propriété-interv_regime) | chaîne de caractères  | Non |
@@ -39,6 +44,20 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [GEOM_XY](#[acteur-économique]-coordonnées-gps-de-l'aire-de-livraison-ou-de-la-rue---propriété-geom_xy) | point géographique  | Oui |
 | [GEOM_WKT](#géométrie-au-format-wkt---propriété-geom_wkt) | chaîne de caractères  | Non |
 | [VEH_TYPES](#[acteur-économique]-types-de-véhicules---propriété-veh_types) | chaîne de caractères  | Oui |
+=======
+| [VEH_TONNAGE](#tonnage---propriété-veh_tonnage) | nombre réel  | Non |
+| [INTERV_JH](#jours-et-heures-de-livraison---propriété-interv_jh) | chaîne de caractères  | Non |
+| [INTERV_REGIME](#régime-d'accès---propriété-interv_regime) | chaîne de caractères  | Non |
+| [INTERV_DUREE](#durée-maximale-d'intervention---propriété-interv_duree) | heure  | Non |
+| [EMPRISE_ZONE](#zone---propriété-emprise_zone) | chaîne de caractères  | Non |
+| [EMPRISE_DESIGNATION](#adresse-du-point-de-référence-de-l'aire---propriété-emprise_designation) | chaîne de caractères  | Oui |
+| [EMPRISE_NBPLACES](#nombre-de-places---propriété-emprise_nbplaces) | nombre réel  | Oui |
+| [EMPRISE_LONGUEUR](#longueur-de-l'emprise---propriété-emprise_longueur) | nombre réel  | Non |
+| [EMPRISE_LARGEUR](#largeur-de-l'emprise---propriété-emprise_largeur) | nombre réel  | Non |
+| [GEOM_XY](#coordonnées-gps-de-l'aire-de-livraison-ou-de-la-rue---propriété-geom_xy) | point géographique  | Oui |
+| [GEOM_WKT](#géométrie-au-format-wkt---propriété-geom_wkt) | chaîne de caractères  | Non |
+| [VEH_TYPES](#types-de-véhicules---propriété-veh_types) | chaîne de caractères  | Oui |
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 | [VEH_USAGES](#types-d'usage---propriété-veh_usages) | chaîne de caractères  | Oui |
 | [EMPRISE_COTE](#coté-de-l'emprise---propriété-emprise_cote) | chaîne de caractères  | Non |
 | [EMPRISE_DEBUT](#début-de-la-section-(libellé)---propriété-emprise_debut) | chaîne de caractères  | Non |
@@ -69,7 +88,11 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur obligatoire
 - Type : chaîne de caractères
 
+<<<<<<< HEAD
 #### [Acteur économique] Nom de la collectivité à l'origine de l'arrêté - Propriété `COLL_NOM`
+=======
+#### Nom de la collectivité à l'origine de l'arrêté - Propriété `COLL_NOM`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Nom de la collectivité.<br/>Ex : Commune d'Aix-en-Provence*
 - Valeur obligatoire
@@ -125,20 +148,32 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur optionnelle
 - Type : chaîne de caractères
 
+<<<<<<< HEAD
 #### [Acteur économique] Tonnage - Propriété `VEH_TONNAGE`
+=======
+#### Tonnage - Propriété `VEH_TONNAGE`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Tonnage maximal du véhicule<br/>Ex : 9*
 - Valeur optionnelle
 - Type : nombre réel
 - Valeur entre 0 et 45
 
+<<<<<<< HEAD
 #### [Acteur économique] Jours et heures de livraison - Propriété `INTERV_JH`
+=======
+#### Jours et heures de livraison - Propriété `INTERV_JH`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Jours et heures de livraison exprimés selon le format OpeningHours d'OpenStreetMap ([https://wiki.openstreetmap.org/wiki/Key:opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours)). Ce format permet d'indiquer les week-ends (we), les jours fériés (PH) et les vacances scolaires (SH). Par exemple `Mo-Fr 09:00-17:00; PH 10:00-12:00; PH Su off` signifie : 'Du lundi au vendredi de 9h à 17h sauf les jours fériés où l'ouverture est de 10h à 12h, à l'exception des jours fériés tombant un dimanche'. `24/7` indique `Tous les jours`. [Utiliser groom-groom pour récupérer les jours et heures de circulation](https://cerema-med.shinyapps.io/groom-groom?action=opening_hours)<br/>Ex : Mo-Fr 08:00-12:00,13:00-17:30; Sa 08:00-12:00; PH off*
 - Valeur optionnelle
 - Type : chaîne de caractères
 
+<<<<<<< HEAD
 #### [Acteur économique] Régime d'accès - Propriété `INTERV_REGIME`
+=======
+#### Régime d'accès - Propriété `INTERV_REGIME`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Permet de savoir si l'aire de livraison est exclusive ou partagée avec du stationnement particulier, ou éventuellement concerne le transport de fond (si on choisit d'intégrer les aires réservés au transport de fond)<br/>Ex : Exclusif*
 - Valeur optionnelle
@@ -150,13 +185,21 @@ Spécification du fichier d'échange relatif aux aires de livraison
     - Transport de fonds
     - Livraison
 
+<<<<<<< HEAD
 #### [Acteur économique] Durée maximale d'intervention - Propriété `INTERV_DUREE`
+=======
+#### Durée maximale d'intervention - Propriété `INTERV_DUREE`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Durée maximale d'intervention (au niveau d'une aire piétonne, par exemple). L'entrée et la sortie dans une zone peuvent être horodatées à la délivrance d'un ticket lors de la traversée d'une borne de passage.<br/>Ex : 03:00:00*
 - Valeur optionnelle
 - Type : heure
 
+<<<<<<< HEAD
 #### [Acteur économique] Zone - Propriété `EMPRISE_ZONE`
+=======
+#### Zone - Propriété `EMPRISE_ZONE`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Zone associée à l'aire. Il s'agit généralement de la dénomination du quartier ou de l'aire piétonne associée règlementée<br/>Ex : Secteur du Centre-Ville*
 - Valeur optionnelle
@@ -167,7 +210,11 @@ Spécification du fichier d'échange relatif aux aires de livraison
 > *Description : Adresse du point de référence de l'aire. Cela peut être toute une rue ou un tronçon. Endroit précis de l'aire de livraison réservée aux livraisons.<br/>Ex : Avenue Philippe Solari, Commune d'Aix-en-Provence, Quartier Mazarin, 200046977-ZFE-001*
 - Valeur obligatoire
 - Type : chaîne de caractères
+<<<<<<< HEAD
 - Motif : `^[a-zA-Z0-9\-\–\'\’\«\»\°\"\s\d\u00C0-\u00FF\(\)\,\.]+$`
+=======
+- Motif : `^[a-zA-Z0-9\-\–\'\’\«\»\°\"\s\dÀ-ÿ\(\)\,\.]+$`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 #### Nombre de places - Propriété `EMPRISE_NBPLACES`
 
@@ -176,21 +223,33 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Type : nombre réel
 - Valeur entre 0 et 100
 
+<<<<<<< HEAD
 #### [Acteur économique] Longueur de l'emprise - Propriété `EMPRISE_LONGUEUR`
+=======
+#### Longueur de l'emprise - Propriété `EMPRISE_LONGUEUR`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Longueur de l'emprise en mètres. Cela peut être soit la longueur de la place, soit celle de l'emprise composée de l'ensemble des places. Dans certains cas, cette longueur peut être de plusieurs dizaines de mètres.<br/>Ex : 9*
 - Valeur optionnelle
 - Type : nombre réel
 - Valeur entre 0 et 100
 
+<<<<<<< HEAD
 #### [Acteur économique] Largeur de l'emprise - Propriété `EMPRISE_LARGEUR`
+=======
+#### Largeur de l'emprise - Propriété `EMPRISE_LARGEUR`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Largeur de l'emprise en mètres.<br/>Ex : 9*
 - Valeur optionnelle
 - Type : nombre réel
 - Valeur entre 0 et 10
 
+<<<<<<< HEAD
 #### [Acteur économique] Coordonnées GPS de l'Aire de Livraison ou de la rue - Propriété `GEOM_XY`
+=======
+#### Coordonnées GPS de l'Aire de Livraison ou de la rue - Propriété `GEOM_XY`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Coordonnées longitude, latitude associées à l'aire de livraison. S'écrit sous la forme 'long,lat' (5 ou 6 décimales sont conseillées).<br/>Ex : 5.42101,43.53591*
 - Valeur obligatoire
@@ -202,7 +261,11 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur optionnelle
 - Type : chaîne de caractères
 
+<<<<<<< HEAD
 #### [Acteur économique] Types de véhicules - Propriété `VEH_TYPES`
+=======
+#### Types de véhicules - Propriété `VEH_TYPES`
+>>>>>>> 9fdf7ade49eba88fae537149170d17e828d59219
 
 > *Description : Types de véhicules. S'il y a plusieurs types, les séparer les valeurs par le caractère '|'. Les valeurs possibles sont : 'Poids lourds', 'Véhicules utilitaires légers', 'Vélo-cargos' et 'Tous véhicules'.<br/>Ex : Poids lourds|Tous véhicules|Vélo-cargos*
 - Valeur obligatoire

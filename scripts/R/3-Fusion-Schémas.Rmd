@@ -46,7 +46,3 @@ sapply(s3$fields, function(x) grepl("\\[Acteur économique\\]", x$title)) %>% wh
 
 sapply(s3$fields, function(x) x$name)[w] %>% paste(collapse = ", ")
 ```
-
-
-
-
