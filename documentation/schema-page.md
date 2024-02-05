@@ -28,7 +28,6 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [REGL_ARTICLE](#article-du-règlement---propriété-regl_article) | chaîne de caractères  | Non |
 | [REGL_SOUS_ARTICLE](#sous-article-du-règlement---propriété-regl_sous_article) | chaîne de caractères  | Non |
 | [VEH_TONNAGE](#tonnage---propriété-veh_tonnage) | nombre réel  | Non |
-| [VEH_TYPES](#[acteur-économique]-types-de-véhicules---propriété-veh_types) | chaîne de caractères  | Oui |
 | [INTERV_JH](#jours-et-heures-de-livraison---propriété-interv_jh) | chaîne de caractères  | Non |
 | [INTERV_REGIME](#régime-d'accès---propriété-interv_regime) | chaîne de caractères  | Non |
 | [INTERV_DUREE](#durée-maximale-d'intervention---propriété-interv_duree) | heure  | Non |
@@ -109,12 +108,6 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Valeur optionnelle
 - Type : nombre réel
 - Valeur entre 0 et 45
-
-#### [Acteur économique] Types de véhicules - Propriété `VEH_TYPES`
-
-> *Description : Types de véhicules. S'il y a plusieurs types, les séparer les valeurs par le caractère '|'. Les valeurs possibles sont : 'Poids lourds', 'Véhicules utilitaires légers', 'Vélo-cargos' et 'Tous véhicules'.<br/>Ex : Poids lourds|Cycles|Voitures particulières|Tous véhicules*
-- Valeur obligatoire
-- Type : chaîne de caractères
 
 #### Jours et heures de livraison - Propriété `INTERV_JH`
 

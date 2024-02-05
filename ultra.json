@@ -66,6 +66,20 @@
     ],
     "fields": [
         {
+            "name": "VEH_TYPES",
+            "title": "[Acteur économique] Types de véhicules",
+            "description": "Types de véhicules. S'il y a plusieurs types, les séparer les valeurs par le caractère '|'. Les valeurs possibles sont : 'Poids lourds', 'Véhicules utilitaires légers', 'Vélo-cargos' et 'Tous véhicules'.",
+            "type": "string",
+            "example": "Poids lourds|Cycles|Voitures particulières|Tous véhicules",
+            "profiles": [
+                "Collectivité locale",
+                "Acteur économique"
+            ],
+            "constraints": {
+                "required": true
+            }
+        },
+        {
             "name": "VEH_USAGES",
             "title": "Types d'usage",
             "description": "Types d'usage de véhicule. S'il y a plusieurs usages, séparer les valeurs par le caractère '|'",
@@ -251,7 +265,7 @@
             }
         },
         {
-            "name": "REGLEMENT",
+            "name": "REGLEMENT (supprimer, cf Joy)",
             "title": "Réglementation",
             "description": "Réglementation",
             "example": "Charte de livraison",

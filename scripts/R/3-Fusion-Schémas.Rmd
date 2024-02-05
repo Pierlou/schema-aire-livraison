@@ -25,7 +25,6 @@ paste(sapply(s2$fields, function(elt) elt$name), collapse=", ")
 length(s1$fields)
 ```
 
-
 ```{r}
 fields <- s2$fields
 ```

@@ -52,6 +52,18 @@ Joy :
 
 > VEH_TYPES : les catégories devraient suivre les catégorisations dans le code de la route à mon avis. Un vélo cargo n'a pas de statut réglementaire, donc je conseillerais de mentionner plutôt « cycles » comme valeur possible, ou alors « cycles pour transport de marchandise » éventuellement. Cela permettrait aussi de laisser la porte ouverte aux ensembles vélo+remorque. Par ailleurs j'imagine qu'avant le « tous véhicules », il faudrait une catégorie « voitures particulières » et une autre pour les cyclomoteurs.
 
+Cédric :
+
+> A quoi sert le champ véhicule type ?
+> on l'a mis surtout dans le schéma de circulation car les arrêtés spécifiés par ex "véhicules lourds, véhicules de livraison ".
+>
+> On voulait reprendre ce champ dans le schéma des AL mais par défaut, seuls les véhicules de livraison peuvent aller sur les AL. Les types véhicules sont discriminés par leur tonnage , voire leur longueur mais pas par un type.
+>
+> A ce jour, les vélos cargo se garent où ils veulent , il n'existe pas de réglementation.
+> L'intérêt de garder ce champ , en prospective, serait de distinguer les véhicules lourds de livraison , des cycles de transport de marchandises. 
+>
+> Je suis pour ne pas l'intégrer ;)
+
 ## Autres champs
 
 Joy :
