@@ -30,13 +30,16 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [VEH_TONNAGE](#tonnage---propriété-veh_tonnage) | nombre réel  | Non |
 | [INTERV_JH](#jours-et-heures-de-livraison---propriété-interv_jh) | chaîne de caractères  | Non |
 | [INTERV_REGIME](#régime-d'accès---propriété-interv_regime) | chaîne de caractères  | Non |
-| [INTERV_DUREE](#durée-maximale-d'intervention---propriété-interv_duree) | heure  | Non |
+| [INTERV_DUREE](#durée-maximale-d'intervention---propriété-interv_duree) | durée  | Non |
+| [INTERV_DISQUE](#disque-obligatoire---propriété-interv_disque) | booléen  | Oui |
 | [EMPRISE_ZONE](#zone---propriété-emprise_zone) | chaîne de caractères  | Non |
 | [EMPRISE_DESIGNATION](#adresse-du-point-de-référence-de-l'aire---propriété-emprise_designation) | chaîne de caractères  | Oui |
 | [EMPRISE_LONGUEUR](#longueur-de-l'emprise---propriété-emprise_longueur) | nombre réel  | Non |
 | [EMPRISE_LARGEUR](#largeur-de-l'emprise---propriété-emprise_largeur) | nombre réel  | Non |
-| [EQUIPEMENT_IRVE_PRESENCE](#installation-de-recharge-de-véhicule-électrique---propriété-equipement_irve_presence) | booléen  | Oui |
-| [EQUIPEMENT_IRVE_PUISSANCE](#puissance-de-l'installation-de-recharge-de-véhicule-électrique---propriété-equipement_irve_puissance) | nombre réel  | Non |
+| [EMPRISE_DEBATTEMENT](#présence-d'un-débattement---propriété-emprise_debattement) | booléen  | Oui |
+| [STATIONNEMENT_LOCALISATION](#localisation-du-stationnement---propriété-stationnement_localisation) | chaîne de caractères  | Non |
+| [IRVE_PRESENCE](#installation-de-recharge-de-véhicule-électrique---propriété-irve_presence) | booléen  | Oui |
+| [IRVE_PUISSANCE](#puissance-de-l'installation-de-recharge-de-véhicule-électrique---propriété-irve_puissance) | nombre réel  | Non |
 | [GEOM_XY](#coordonnées-gps-de-l'aire-de-livraison-ou-de-la-rue---propriété-geom_xy) | point géographique  | Oui |
 | [GEOM_WKT](#géométrie-au-format-wkt---propriété-geom_wkt) | chaîne de caractères  | Non |
 
@@ -127,9 +130,15 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Durée maximale d'intervention - Propriété `INTERV_DUREE`
 
-> *Description : Durée maximale d'intervention (au niveau d'une aire piétonne, par exemple). L'entrée et la sortie dans une zone peuvent être horodatées à la délivrance d'un ticket lors de la traversée d'une borne de passage.<br/>Ex : 03:00:00*
+> *Description : Durée maximale d'intervention (au niveau d'une aire piétonne, par exemple). L'entrée et la sortie dans une zone peuvent être horodatées à la délivrance d'un ticket lors de la traversée d'une borne de passage.<br/>Ex : P3H*
 - Valeur optionnelle
-- Type : heure
+- Type : durée
+
+#### Disque obligatoire - Propriété `INTERV_DISQUE`
+
+> *Description : Obligation de disposer d'un disque de livraison<br/>Ex : oui*
+- Valeur obligatoire
+- Type : booléen
 
 #### Zone - Propriété `EMPRISE_ZONE`
 
@@ -158,15 +167,37 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Type : nombre réel
 - Valeur entre 0 et 10
 
-#### Installation de recharge de véhicule électrique - Propriété `EQUIPEMENT_IRVE_PRESENCE`
+#### Présence d'un débattement - Propriété `EMPRISE_DEBATTEMENT`
+
+> *Description : Un espace est disponible de part et d'autre de l'aire de livraison pour un accès facilité<br/>Ex : oui*
+- Valeur obligatoire
+- Type : booléen
+
+#### Localisation du stationnement - Propriété `STATIONNEMENT_LOCALISATION`
+
+> *Description : Localisation du stationnement. Champ issu de https://opendata.paris.fr/explore/dataset/stationnement-voie-publique-emplacements/table/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.zoneres&disjunctive.locsta&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&disjunctive.zoneasp&disjunctive.stv&disjunctive.prefet&q=livraison&refine.regpri=LIVRAISON&sort=locsta&basemap=jawg.dark&location=16,48.85483,2.33805<br/>Ex : Chaussée*
+- Valeur optionnelle
+- Type : chaîne de caractères
+- Valeurs autorisées : 
+    - Autre
+    - Contre allée
+    - Contre terre plein
+    - Demi lincoln
+    - Faux lincoln
+    - Lincoln
+    - Place
+    - Terre plein
+    - Trottoir
+
+#### Installation de recharge de véhicule électrique - Propriété `IRVE_PRESENCE`
 
 > *Description : Présence d'une borne de recharge de véhicule électrique<br/>Ex : oui*
 - Valeur obligatoire
 - Type : booléen
 
-#### Puissance de l'installation de recharge de véhicule électrique - Propriété `EQUIPEMENT_IRVE_PUISSANCE`
+#### Puissance de l'installation de recharge de véhicule électrique - Propriété `IRVE_PUISSANCE`
 
-> *Description : Puissance de l'installation de recharge de véhicule électrique en kVA<br/>Ex : 22*
+> *Description : Puissance de l'installation de recharge de véhicule électrique en kW<br/>Ex : 22*
 - Valeur optionnelle
 - Type : nombre réel
 - Valeur entre 1 et 150

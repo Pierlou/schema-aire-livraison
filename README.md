@@ -47,6 +47,10 @@ Autrement, on trouve sur internet plusieurs jeux de données ouverts sur les air
   - Carte présente : https://www.paris.fr/pages/logistique-marchandises-livraisons-4738 (capgeo.sig.fr)
     - https://capgeo.sig.paris.fr/Apps/Places_Livraison/
   - Mention de la carte interactive : https://www.paris.fr/pages/paris-experimente-pour-une-meilleure-utilisation-des-places-de-livraison-16080
+- [Nantes](https://data.nantesmetropole.fr/explore/dataset/244400404_aires-livraison-nantes-metropole/table/?disjunctive.commune&sort=debattement)
+  - Champ débattement
+- [Mulhouse](https://data.mulhouse-alsace.fr/explore/dataset/68224_aires-de-livraison-sur-mulhouse/table/?location=17,47.75468,7.33279&basemap=jawg.streets)
+  - Peu de champs
 
 ## Remarques sur la numérisation
 

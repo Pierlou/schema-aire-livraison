@@ -289,14 +289,56 @@
             "name": "INTERV_DUREE",
             "title": "Durée maximale d'intervention",
             "description": "Durée maximale d'intervention (au niveau d'une aire piétonne, par exemple). L'entrée et la sortie dans une zone peuvent être horodatées à la délivrance d'un ticket lors de la traversée d'une borne de passage.",
-            "example": "03:00:00",
-            "type": "time",
+            "example": "P0DT3H",
+            "type": "duration",
             "profiles": [
                 "Collectivité locale",
                 "Acteur économique"
             ],
             "constraints": {
                 "required": false
+            }
+        },
+        {
+            "name": "INTERV_DISQUE",
+            "title": "Disque obligatoire",
+            "description": "Obligation de disposer d'un disque de livraison",
+            "profiles": [
+                "Collectivité locale",
+                "Acteur économique"
+            ],
+            "example": "oui",
+            "trueValues": [
+                "oui",
+                "Oui",
+                "OUI",
+                "o",
+                "O",
+                "vrai",
+                "Vrai",
+                "VRAI",
+                "true",
+                "True",
+                "TRUE",
+                "1"
+            ],
+            "falseValues": [
+                "non",
+                "Non",
+                "NON",
+                "n",
+                "N",
+                "faux",
+                "Faux",
+                "FAUX",
+                "false",
+                "False",
+                "FALSE",
+                "0"
+            ],
+            "type": "boolean",
+            "constraints": {
+                "required": true
             }
         },
         {
@@ -360,7 +402,75 @@
             }
         },
         {
-            "name": "EQUIPEMENT_IRVE_PRESENCE",
+            "name": "EMPRISE_DEBATTEMENT",
+            "title": "Présence d'un débattement",
+            "description": "Un espace est disponible de part et d'autre de l'aire de livraison pour un accès facilité",
+            "profiles": [
+                "Collectivité locale",
+                "Acteur économique"
+            ],
+            "example": "oui",
+            "trueValues": [
+                "oui",
+                "Oui",
+                "OUI",
+                "o",
+                "O",
+                "vrai",
+                "Vrai",
+                "VRAI",
+                "true",
+                "True",
+                "TRUE",
+                "1"
+            ],
+            "falseValues": [
+                "non",
+                "Non",
+                "NON",
+                "n",
+                "N",
+                "faux",
+                "Faux",
+                "FAUX",
+                "false",
+                "False",
+                "FALSE",
+                "0"
+            ],
+            "type": "boolean",
+            "constraints": {
+                "required": true
+            }
+        },
+        {
+            "name": "STATIONNEMENT_LOCALISATION",
+            "title": "Localisation du stationnement",
+            "description": "Localisation du stationnement. Champ issu de https://opendata.paris.fr/explore/dataset/stationnement-voie-publique-emplacements/table/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.zoneres&disjunctive.locsta&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&disjunctive.zoneasp&disjunctive.stv&disjunctive.prefet&q=livraison&refine.regpri=LIVRAISON&sort=locsta&basemap=jawg.dark&location=16,48.85483,2.33805",
+            "type": "string",
+            "profiles": [
+                "Collectivité locale",
+                "Acteur économique"
+            ],
+            "example": "Chaussée",
+            "constraints": {
+                "required": false,
+                "enum": [
+                    "Autre",
+                    "Chaussée",
+                    "Contre allée",
+                    "Contre terre plein",
+                    "Demi lincoln",
+                    "Faux lincoln",
+                    "Lincoln",
+                    "Place",
+                    "Terre plein",
+                    "Trottoir"
+                ]
+            }
+        },
+        {
+            "name": "IRVE_PRESENCE",
             "title": "Installation de recharge de véhicule électrique",
             "description": "Présence d'une borne de recharge de véhicule électrique",
             "example": "oui",
@@ -402,9 +512,9 @@
             }
         },
         {
-            "name": "EQUIPEMENT_IRVE_PUISSANCE",
+            "name": "IRVE_PUISSANCE",
             "title": "Puissance de l'installation de recharge de véhicule électrique",
-            "description": "Puissance de l'installation de recharge de véhicule électrique en kVA",
+            "description": "Puissance de l'installation de recharge de véhicule électrique en kW",
             "type": "number",
             "example": "22",
             "profiles": [

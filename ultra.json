@@ -221,27 +221,6 @@
             }
         },
         {
-            "name": "STATIONNEMENT_LOCALISATION",
-            "title": "Localisation du stationnement",
-            "description": "Localisation du stationnement. Champ issu de https://opendata.paris.fr/explore/dataset/stationnement-voie-publique-emplacements/table/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.zoneres&disjunctive.locsta&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&disjunctive.zoneasp&disjunctive.stv&disjunctive.prefet&q=livraison&refine.regpri=LIVRAISON&sort=locsta&basemap=jawg.dark&location=16,48.85483,2.33805",
-            "type": "string",
-            "example": "Chaussée",
-            "constraints": {
-                "required": false,
-                "enum": [
-                    "Autre",
-                    "Contre allée",
-                    "Contre terre plein",
-                    "Demi lincoln",
-                    "Faux lincoln",
-                    "Lincoln",
-                    "Place",
-                    "Terre plein",
-                    "Trottoir"
-                ]
-            }
-        },
-        {
             "name": "ID_ASP",
             "title": "Identifiant de la zone de contrôle ASP",
             "description": "Identifiant de la zone de contrôle ASP",
