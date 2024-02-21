@@ -31,21 +31,21 @@ Spécification du fichier d'échange relatif aux aires de livraison
 | [INTERV_JH](#jours-et-heures-de-livraison---propriété-interv_jh) | chaîne de caractères  | Non |
 | [INTERV_REGIME](#régime-d'accès---propriété-interv_regime) | chaîne de caractères  | Non |
 | [INTERV_DUREE](#durée-maximale-d'intervention---propriété-interv_duree) | durée  | Non |
-| [INTERV_DISQUE](#disque-obligatoire---propriété-interv_disque) | booléen  | Oui |
+| [INTERV_DISQUE](#disque-obligatoire---propriété-interv_disque) | booléen  | Non |
 | [EMPRISE_ZONE](#zone---propriété-emprise_zone) | chaîne de caractères  | Non |
 | [EMPRISE_DESIGNATION](#adresse-du-point-de-référence-de-l'aire---propriété-emprise_designation) | chaîne de caractères  | Oui |
 | [EMPRISE_LONGUEUR](#longueur-de-l'emprise---propriété-emprise_longueur) | nombre réel  | Non |
 | [EMPRISE_LARGEUR](#largeur-de-l'emprise---propriété-emprise_largeur) | nombre réel  | Non |
-| [EMPRISE_DEBATTEMENT](#présence-d'un-débattement---propriété-emprise_debattement) | booléen  | Oui |
+| [EMPRISE_DEBATTEMENT](#présence-d'un-débattement---propriété-emprise_debattement) | booléen  | Non |
 | [STATIONNEMENT_LOCALISATION](#localisation-du-stationnement---propriété-stationnement_localisation) | chaîne de caractères  | Non |
-| [IRVE_PRESENCE](#installation-de-recharge-de-véhicule-électrique---propriété-irve_presence) | booléen  | Oui |
+| [IRVE_PRESENCE](#installation-de-recharge-de-véhicule-électrique---propriété-irve_presence) | booléen  | Non |
 | [IRVE_PUISSANCE](#puissance-de-l'installation-de-recharge-de-véhicule-électrique---propriété-irve_puissance) | nombre réel  | Non |
 | [GEOM_XY](#coordonnées-gps-de-l'aire-de-livraison-ou-de-la-rue---propriété-geom_xy) | point géographique  | Oui |
 | [GEOM_WKT](#géométrie-au-format-wkt---propriété-geom_wkt) | chaîne de caractères  | Non |
 
 #### Identifiant de l'entité - Propriété `ID`
 
-> *Description : Il s'agit de l'identifiant, unique, de la ligne du tableau.. [Vous pouvez créer des identifiants grâce à l'application Heidi d'Etalab](https://heidi.app.etalab.studio/).<br/>Ex : 133-3*
+> *Description : Il s'agit de l'identifiant, unique, de la ligne du tableau. Vous pouvez créer des identifiants grâce à l'application [Heidi](https://heidi.app.etalab.studio/) d'Etalab.<br/>Ex : 133-3*
 - Valeur obligatoire
 - Type : chaîne de caractères
 
@@ -130,14 +130,14 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Durée maximale d'intervention - Propriété `INTERV_DUREE`
 
-> *Description : Durée maximale d'intervention (au niveau d'une aire piétonne, par exemple). L'entrée et la sortie dans une zone peuvent être horodatées à la délivrance d'un ticket lors de la traversée d'une borne de passage.<br/>Ex : P3H*
+> *Description : Durée maximale d'intervention (au niveau d'une aire piétonne, par exemple). L'entrée et la sortie dans une zone peuvent être horodatées à la délivrance d'un ticket lors de la traversée d'une borne de passage.<br/>Ex : P0DT3H*
 - Valeur optionnelle
 - Type : durée
 
 #### Disque obligatoire - Propriété `INTERV_DISQUE`
 
 > *Description : Obligation de disposer d'un disque de livraison<br/>Ex : oui*
-- Valeur obligatoire
+- Valeur optionnelle
 - Type : booléen
 
 #### Zone - Propriété `EMPRISE_ZONE`
@@ -170,7 +170,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 #### Présence d'un débattement - Propriété `EMPRISE_DEBATTEMENT`
 
 > *Description : Un espace est disponible de part et d'autre de l'aire de livraison pour un accès facilité<br/>Ex : oui*
-- Valeur obligatoire
+- Valeur optionnelle
 - Type : booléen
 
 #### Localisation du stationnement - Propriété `STATIONNEMENT_LOCALISATION`
@@ -180,6 +180,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 - Type : chaîne de caractères
 - Valeurs autorisées : 
     - Autre
+    - Chaussée
     - Contre allée
     - Contre terre plein
     - Demi lincoln
@@ -192,7 +193,7 @@ Spécification du fichier d'échange relatif aux aires de livraison
 #### Installation de recharge de véhicule électrique - Propriété `IRVE_PRESENCE`
 
 > *Description : Présence d'une borne de recharge de véhicule électrique<br/>Ex : oui*
-- Valeur obligatoire
+- Valeur optionnelle
 - Type : booléen
 
 #### Puissance de l'installation de recharge de véhicule électrique - Propriété `IRVE_PUISSANCE`
@@ -210,6 +211,6 @@ Spécification du fichier d'échange relatif aux aires de livraison
 
 #### Géométrie au format WKT - Propriété `GEOM_WKT`
 
-> *Description : Géométrie de la rue (ligne), ou de l'emprise (polygone) exprimée au format [WKT (Well Know Text](https://fr.wikipedia.org/wiki/Well-known_text) sous le système de projection WGS84 (EPSG:4326)<br/>Ex : LineString(5.39340184 45.56538751, 5.41017215 45.56722934, 5.42510063 45.5679079)*
+> *Description : Géométrie de la rue (ligne), ou de l'emprise (polygone) exprimée au format [WKT](https://fr.wikipedia.org/wiki/Well-known_text) (Well Know Text) sous le système de projection WGS84 (EPSG:4326)<br/>Ex : LineString(5.39340184 45.56538751, 5.41017215 45.56722934, 5.42510063 45.5679079)*
 - Valeur optionnelle
 - Type : chaîne de caractères
