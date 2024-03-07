@@ -15,6 +15,8 @@ Le schéma comporte les **champs** essentiels pour identifier les paramètres d'
 
 [Un fichier d'exemple](exemple_antibes.csv) est fourni, avec la numérisation de trois aires de livraison sur la commune d'Antibes.
 
+Auteurs principaux du schéma : Mathieu RAJERISON & Cédric BARIOU
+
 ## Le schéma
 
 [Voir le schéma au format JSON TableSchema ](schema.json)  
