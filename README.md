@@ -54,8 +54,8 @@ Autrement, on trouve sur internet plusieurs jeux de données ouverts sur les air
 - [Toulouse](https://data.toulouse-metropole.fr/explore/dataset/aires-de-livraison/)
   - Champ relatif à la domanialité
 - [Paris](https://opendata.paris.fr/explore/dataset/stationnement-voie-publique-emplacements/table/?disjunctive.regpri&disjunctive.regpar&disjunctive.typsta&disjunctive.arrond&disjunctive.zoneres&disjunctive.locsta&disjunctive.parite&disjunctive.signhor&disjunctive.signvert&disjunctive.confsign&disjunctive.typemob&disjunctive.zoneasp&disjunctive.stv&disjunctive.prefet&q=livraison&refine.regpri=LIVRAISON&sort=typemob&basemap=jawg.dark&location=16,48.85483,2.33805)
-  - Carte présente : https://www.paris.fr/pages/logistique-marchandises-livraisons-4738 (capgeo.sig.fr)
-    - https://capgeo.sig.paris.fr/Apps/Places_Livraison/
+  - Carte présente : <https://www.paris.fr/pages/logistique-marchandises-livraisons-4738> (capgeo.sig.fr)
+    - <https://capgeo.sig.paris.fr/Apps/Places_Livraison/>
   - Mention de la carte interactive : https://www.paris.fr/pages/paris-experimente-pour-une-meilleure-utilisation-des-places-de-livraison-16080
 - [Nantes](https://data.nantesmetropole.fr/explore/dataset/244400404_aires-livraison-nantes-metropole/table/?disjunctive.commune&sort=debattement)
   - Champ débattement
